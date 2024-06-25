@@ -8,7 +8,7 @@
     <link href="/2024/06/25/qttouch1/"/>
     <url>/2024/06/25/qttouch1/</url>
     
-    <content type="html"><![CDATA[<h1 id="QT开发-（触摸屏）"><a href="#QT开发-（触摸屏）" class="headerlink" title="QT开发 （触摸屏）"></a>QT开发 （触摸屏）</h1><br><h2 id="首先需要了解一下什么是事件"><a href="#首先需要了解一下什么是事件" class="headerlink" title="首先需要了解一下什么是事件"></a>首先需要了解一下什么是事件</h2><ul><li>我理解的事件是MCU的中断，即发生事件立即去执行处理事件的相关方法<ul><li>只不过是否中断主函数执行呢？我觉得应该不影响<br></li></ul></li><li>只需要重新在子类中继承某些事件的处理方法，则可以重写这些方法</li><li>所有事件需要收到类的事件转发器才会进行响应，该事件转发器名为event()</li><li>在进入事件转发器之前会进入事件过滤器 eventFilterd() 可用于过滤不想使用的事件 (return true)</li><li></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="QT开发-（触摸屏）"><a href="#QT开发-（触摸屏）" class="headerlink" title="QT开发 （触摸屏）"></a>QT开发 （触摸屏）</h1><br><h2 id="首先需要了解一下什么是事件"><a href="#首先需要了解一下什么是事件" class="headerlink" title="首先需要了解一下什么是事件"></a>首先需要了解一下什么是事件</h2><ul><li>我理解的事件是MCU的中断，即发生事件立即去执行处理事件的相关方法<ul><li>只不过是否中断主函数执行呢？我觉得应该不影响<br></li></ul></li><li>只需要重新在子类中继承某些事件的处理方法，则可以重写这些方法</li><li>所有事件需要收到类的事件转发器才会进行响应，该事件转发器名为event()</li><li>在进入事件转发器之前会进入事件过滤器 eventFilterd() 可用于过滤不想使用的事件 (return true)</li></ul><h2 id="QTouchEvent-类"><a href="#QTouchEvent-类" class="headerlink" title="QTouchEvent 类"></a>QTouchEvent 类</h2><ul><li>这个类主要是负责处理触摸事件的、但是看了一部分大佬的代码也有直接用鼠标实现功能的</li></ul>]]></content>
     
     
     
