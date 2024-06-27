@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>QT史山项目经手解析Ⅰ</title>
+    <link href="/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%901/"/>
+    <url>/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%901/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MF-TEST-工程Ⅰ"><a href="#MF-TEST-工程Ⅰ" class="headerlink" title="MF-TEST 工程Ⅰ"></a>MF-TEST 工程Ⅰ</h1><br><h2 id="MAIN-主函数入口"><a href="#MAIN-主函数入口" class="headerlink" title="MAIN 主函数入口"></a>MAIN 主函数入口</h2><ul><li>数据库创建</li><li>数据库初始值存入</li><li>传感器初始值</li><li>阶段初始化</li><li>运行预加载界面</li></ul><h2 id="perloadPage-预加载类"><a href="#perloadPage-预加载类" class="headerlink" title="perloadPage 预加载类"></a>perloadPage 预加载类</h2><ul><li>寻找串口连接（貌似存在默认连接COM1）</li><li>建立主界面 Maininterface</li><li>如果不存在串口：<ul><li>调控所有的主界面显示 调用槽 执行 主界面：串口错误模式</li></ul></li><li>如果存在：<ul><li>显示正在配置串口 设置槽 轮值至串口信息匹配 如果没有匹配成功 则进入主菜单， 执行串口模式错误</li></ul></li></ul><h2 id="MainEle-主界面类"><a href="#MainEle-主界面类" class="headerlink" title="MainEle 主界面类"></a>MainEle 主界面类</h2><ul><li>设置 主页面：左侧、上侧菜单栏</li><li>设置 实验数据显示</li><li>设置 实验类型菜单</li><li>设置 实验类型名字</li><li>设置 定时器</li><li>添加实验类型 清单 支持选择<ul><li>根据选择适配 实验设置界面 、 全部清零信号 、 新建报表 、 新建查询表 、新建word表</li></ul></li><li></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>QT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我们需要搞定这份QT的触摸屏开发</title>
     <link href="/2024/06/25/qttouch1/"/>
     <url>/2024/06/25/qttouch1/</url>
