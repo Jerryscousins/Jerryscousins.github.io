@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>QT史山项目经手解析Ⅱ</title>
+    <link href="/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%902/"/>
+    <url>/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%902/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MF-TEST-工程Ⅱ"><a href="#MF-TEST-工程Ⅱ" class="headerlink" title="MF-TEST 工程Ⅱ"></a>MF-TEST 工程Ⅱ</h1><br><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>QT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>QT史山项目经手解析Ⅰ</title>
     <link href="/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%901/"/>
     <url>/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%901/</url>
@@ -23,30 +42,11 @@
   
   
   <entry>
-    <title>QT史山项目经手解析Ⅰ</title>
-    <link href="/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%902/"/>
-    <url>/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%902/</url>
+    <title>触摸屏 在QT开发中的位置</title>
+    <link href="/2024/06/25/QT%E8%A7%A6%E6%91%B8%E5%B1%8F1/"/>
+    <url>/2024/06/25/QT%E8%A7%A6%E6%91%B8%E5%B1%8F1/</url>
     
-    <content type="html"><![CDATA[<h1 id="MF-TEST-工程Ⅰ"><a href="#MF-TEST-工程Ⅰ" class="headerlink" title="MF-TEST 工程Ⅰ"></a>MF-TEST 工程Ⅰ</h1><br><h2 id="MAIN-主函数入口"><a href="#MAIN-主函数入口" class="headerlink" title="MAIN 主函数入口"></a>MAIN 主函数入口</h2><ul><li>数据库创建</li><li>数据库初始值存入</li><li>传感器初始值</li><li>阶段初始化</li><li>运行预加载界面</li></ul><h2 id="perloadPage-预加载类"><a href="#perloadPage-预加载类" class="headerlink" title="perloadPage 预加载类"></a>perloadPage 预加载类</h2><ul><li>寻找串口连接（貌似存在默认连接COM1）</li><li>建立主界面 Maininterface</li><li>如果不存在串口：<ul><li>调控所有的主界面显示 调用槽 执行 主界面：串口错误模式</li></ul></li><li>如果存在：<ul><li>显示正在配置串口 设置槽 轮值至串口信息匹配 如果没有匹配成功 则进入主菜单， 执行串口模式错误</li></ul></li></ul><h2 id="MainEle-主界面类"><a href="#MainEle-主界面类" class="headerlink" title="MainEle 主界面类"></a>MainEle 主界面类</h2><ul><li>设置 主页面：左侧、上侧菜单栏</li><li>设置 实验数据显示</li><li>设置 实验类型菜单</li><li>设置 实验类型名字</li><li>设置 定时器</li><li>添加实验类型 清单 支持选择<ul><li>根据选择适配 实验设置界面 、 全部清零信号 、 新建报表 、 新建查询表 、新建word表</li><li>启用 MetalStretchingtest （主页面置中）类 ⭐</li></ul></li><li>TeststackedWidget 子内容 框类</li><li>Pageswitchingfunction 按钮按下页面更改：<ul><li>所有要求 激活 password 界面（输入密码）</li><li>设置：<ul><li>setset 类 （保存与取消的 系统设置）</li><li>貌似使用了一种 内联函数式的 connect</li></ul></li><li>标定：<ul><li>启动 eleCalibtion（标定） 界面 ⭐</li></ul></li><li>实验类型选择：<ul><li>添加 addtest 实验类型界面</li></ul></li><li>权限界面<ul><li>Permission界面 通讯设置和注册页面</li></ul></li><li>工具箱界面<ul><li>m_toolbox 千分表通讯设置</li></ul></li></ul></li></ul>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>QT</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>我们需要搞定这份QT的触摸屏开发</title>
-    <link href="/2024/06/25/qttouch1/"/>
-    <url>/2024/06/25/qttouch1/</url>
-    
-    <content type="html"><![CDATA[<h1 id="QT开发-（触摸屏）"><a href="#QT开发-（触摸屏）" class="headerlink" title="QT开发 （触摸屏）"></a>QT开发 （触摸屏）</h1><br><h2 id="首先需要了解一下什么是事件"><a href="#首先需要了解一下什么是事件" class="headerlink" title="首先需要了解一下什么是事件"></a>首先需要了解一下什么是事件</h2><ul><li>我理解的事件是MCU的中断，即发生事件立即去执行处理事件的相关方法<ul><li>只不过是否中断主函数执行呢？我觉得应该不影响<br></li></ul></li><li>只需要重新在子类中继承某些事件的处理方法，则可以重写这些方法</li><li>所有事件需要收到类的事件转发器才会进行响应，该事件转发器名为event()</li><li>在进入事件转发器之前会进入事件过滤器 eventFilterd() 可用于过滤不想使用的事件 (return true)</li></ul><h2 id="QTouchEvent-类"><a href="#QTouchEvent-类" class="headerlink" title="QTouchEvent 类"></a>QTouchEvent 类</h2><ul><li>这个类主要是负责处理触摸事件的、但是看了一部分大佬的代码也有直接用鼠标实现功能的</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="触摸屏-在QT开发中的位置"><a href="#触摸屏-在QT开发中的位置" class="headerlink" title="触摸屏 在QT开发中的位置"></a>触摸屏 在QT开发中的位置</h1><br><h2 id="首先需要了解一下什么是事件"><a href="#首先需要了解一下什么是事件" class="headerlink" title="首先需要了解一下什么是事件"></a>首先需要了解一下什么是事件</h2><ul><li>我理解的事件是MCU的中断，即发生事件立即去执行处理事件的相关方法<ul><li>只不过是否中断主函数执行呢？我觉得应该不影响<br></li></ul></li><li>只需要重新在子类中继承某些事件的处理方法，则可以重写这些方法</li><li>所有事件需要收到类的事件转发器才会进行响应，该事件转发器名为event()</li><li>在进入事件转发器之前会进入事件过滤器 eventFilterd() 可用于过滤不想使用的事件 (return true)</li></ul><h2 id="QTouchEvent-类"><a href="#QTouchEvent-类" class="headerlink" title="QTouchEvent 类"></a>QTouchEvent 类</h2><ul><li>这个类主要是负责处理触摸事件的、但是看了一部分大佬的代码也有直接用鼠标实现功能的</li></ul>]]></content>
     
     
     
