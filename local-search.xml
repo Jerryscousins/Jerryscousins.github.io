@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>QT史山项目经手解析Ⅱ</title>
-    <link href="/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%902/"/>
-    <url>/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%902/</url>
+    <title>使用 Qt-material-widget 美化项目</title>
+    <link href="/2024/06/28/qt%E7%BE%8E%E5%8C%96/"/>
+    <url>/2024/06/28/qt%E7%BE%8E%E5%8C%96/</url>
     
-    <content type="html"><![CDATA[<h1 id="MF-TEST-工程Ⅱ"><a href="#MF-TEST-工程Ⅱ" class="headerlink" title="MF-TEST 工程Ⅱ"></a>MF-TEST 工程Ⅱ</h1><br><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="Qt-material-widget"><a href="#Qt-material-widget" class="headerlink" title="Qt-material-widget"></a>Qt-material-widget</h1><br>今天收到了sir 的催促消息，我需要迅速做一版demo让sir看看怎么个事<p>于是我找了一份佬的控件库 <a href="https://github.com/laserpants/qt-material-widgets" title="Github连接">肘去看看</a></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>废话不多， 今天火急火燎的找了一个佬做的widget类，感觉蛮不错，很多东西都是用的Android默认的动画，本来这东西在Andrioid上只能说狗看了狗都嫌，但是放到我们桌面开发QT这里，仿佛就是 <strong>致命的解药</strong></p><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>相当多，举几个比较有存在感的例子</p><ul><li>Drawer</li><li>Toggle 开关</li><li>Tabs 任务栏</li><li>Slider 线性开关</li><li>Circular Progress 加载转转</li><li>Snackbar 弹出提醒框</li><li>Drawer 弹出菜单</li><li>dialog 弹出页面</li></ul><p><strong>啊，美妙！</strong></p><h2 id="移植"><a href="#移植" class="headerlink" title="移植"></a>移植</h2><p>我要把这东西改到我想让他出现的地方<br>大致看了看用法作用， 如果想让他实现的话，需要一段时间和一定的熟练度</p>]]></content>
     
     
     
@@ -23,11 +23,11 @@
   
   
   <entry>
-    <title>QT史山项目经手解析Ⅰ</title>
+    <title>QT项目经手解析Ⅰ</title>
     <link href="/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%901/"/>
     <url>/2024/06/27/%E5%8F%B2%E5%B1%B1%E8%A7%A3%E6%9E%901/</url>
     
-    <content type="html"><![CDATA[<h1 id="MF-TEST-工程Ⅰ"><a href="#MF-TEST-工程Ⅰ" class="headerlink" title="MF-TEST 工程Ⅰ"></a>MF-TEST 工程Ⅰ</h1><br><h2 id="MAIN-主函数入口"><a href="#MAIN-主函数入口" class="headerlink" title="MAIN 主函数入口"></a>MAIN 主函数入口</h2><ul><li>数据库创建</li><li>数据库初始值存入</li><li>传感器初始值</li><li>阶段初始化</li><li>运行预加载界面</li></ul><h2 id="perloadPage-预加载类"><a href="#perloadPage-预加载类" class="headerlink" title="perloadPage 预加载类"></a>perloadPage 预加载类</h2><ul><li>寻找串口连接（貌似存在默认连接COM1）</li><li>建立主界面 Maininterface</li><li>如果不存在串口：<ul><li>调控所有的主界面显示 调用槽 执行 主界面：串口错误模式</li></ul></li><li>如果存在：<ul><li>显示正在配置串口 设置槽 轮值至串口信息匹配 如果没有匹配成功 则进入主菜单， 执行串口模式错误</li></ul></li></ul><h2 id="MainEle-主界面类"><a href="#MainEle-主界面类" class="headerlink" title="MainEle 主界面类"></a>MainEle 主界面类</h2><ul><li>设置 主页面：左侧、上侧菜单栏</li><li>设置 实验数据显示</li><li>设置 实验类型菜单</li><li>设置 实验类型名字</li><li>设置 定时器</li><li>添加实验类型 清单 支持选择<ul><li>根据选择适配 实验设置界面 、 全部清零信号 、 新建报表 、 新建查询表 、新建word表</li><li>启用 MetalStretchingtest （主页面置中）类 ⭐</li></ul></li><li>TeststackedWidget 子内容 框类</li><li>Pageswitchingfunction 按钮按下页面更改：<ul><li>所有要求 激活 password 界面（输入密码）</li><li>设置：<ul><li>setset 类 （保存与取消的 系统设置）</li><li>貌似使用了一种 内联函数式的 connect</li></ul></li><li>标定：<ul><li>启动 eleCalibtion（标定） 界面 ⭐</li></ul></li><li>实验类型选择：<ul><li>添加 addtest 实验类型界面</li></ul></li><li>权限界面<ul><li>Permission界面 通讯设置和注册页面</li></ul></li><li>工具箱界面<ul><li>m_toolbox 千分表通讯设置</li></ul></li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="MF-TEST-工程Ⅰ"><a href="#MF-TEST-工程Ⅰ" class="headerlink" title="MF-TEST 工程Ⅰ"></a>MF-TEST 工程Ⅰ</h1><br><h2 id="MAIN-主函数入口"><a href="#MAIN-主函数入口" class="headerlink" title="MAIN 主函数入口"></a>MAIN 主函数入口</h2><ul><li>数据库创建</li><li>数据库初始值存入</li><li>传感器初始值</li><li>阶段初始化</li><li>运行预加载界面</li></ul><h2 id="perloadPage-预加载类"><a href="#perloadPage-预加载类" class="headerlink" title="perloadPage 预加载类"></a>perloadPage 预加载类</h2><ul><li>寻找串口连接（貌似存在默认连接COM1）</li><li>建立主界面 Maininterface ⭐</li><li>如果不存在串口：<ul><li>调控所有的主界面显示 调用槽 执行 主界面：串口错误模式</li></ul></li><li>如果存在：<ul><li>显示正在配置串口 设置槽 轮值至串口信息匹配 如果没有匹配成功 则进入主菜单， 执行串口模式错误</li></ul></li></ul><h2 id="MainEle-主界面类"><a href="#MainEle-主界面类" class="headerlink" title="MainEle 主界面类"></a>MainEle 主界面类</h2><ul><li>设置 主页面：左侧、上侧菜单栏</li><li>设置 实验数据显示</li><li>设置 实验类型菜单</li><li>设置 实验类型名字</li><li>设置 定时器</li><li>添加实验类型 清单 支持选择<ul><li>根据选择适配 实验设置界面 、 全部清零信号 、 新建报表 、 新建查询表 、新建word表</li><li>启用 MetalStretchingtest （主页面置中）类 ⭐</li></ul></li><li>TeststackedWidget 子内容 框类</li><li>Pageswitchingfunction 按钮按下页面更改：<ul><li>所有要求 激活 password 界面（输入密码）</li><li>设置：<ul><li>setset 类 （保存与取消的 系统设置）</li><li>貌似使用了一种 内联函数式的 connect</li></ul></li><li>标定：<ul><li>启动 eleCalibtion（标定） 界面 ⭐</li></ul></li><li>实验类型选择：<ul><li>添加 addtest 实验类型界面</li></ul></li><li>权限界面<ul><li>Permission界面 通讯设置和注册页面</li></ul></li><li>工具箱界面<ul><li>m_toolbox 千分表通讯设置</li></ul></li></ul></li></ul>]]></content>
     
     
     
