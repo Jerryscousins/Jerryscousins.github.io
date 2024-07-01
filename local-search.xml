@@ -4,11 +4,30 @@
   
   
   <entry>
+    <title>Qt-Arm项目 Main函数梳理Ⅰ</title>
+    <link href="/2024/07/01/Qt-arm%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86%E2%85%A0/"/>
+    <url>/2024/07/01/Qt-arm%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86%E2%85%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="进行一个很快的框架梳理"><a href="#进行一个很快的框架梳理" class="headerlink" title="进行一个很快的框架梳理"></a>进行一个很快的框架梳理</h1><blockquote><p>所以架构师赚钱多（确信</p></blockquote><ul><li>它使用的一个单独的类管理界面的跳转，我在考虑是否Pc端的软件也需要实现这个转变？</li></ul><h2 id="Beep蜂鸣器线程"><a href="#Beep蜂鸣器线程" class="headerlink" title="Beep蜂鸣器线程"></a>Beep蜂鸣器线程</h2><blockquote><p>他把这个控件单独列出来了， 因为他复制的CSDN的😀，这个部分特别公式化和模块化，唯一美中不足就是构造函数没有<strong>私有化</strong>，存在泄露问题</p></blockquote><p>这属于第一次接触Qt中的多进程，多进程是需要使用继承Thread类 ，重写其中run函数来控制的</p><p>自定义的类并没有使用单例框架中的做法将他放在pirvice中，而是创造性的放到了一个方法中，这个方法是staic的，所以整篇项目有且仅有一个该线程  </p><p>Linux 环境下， 配置gpio仅需访问对应的接口即可，而且是直接调用shell就可以实现，头一次接触， 觉得有种力大砖飞的美，总觉得不最起用个通道？🤔</p><p>是我愚昧了，只用在定义的时候要力大砖飞， 修改的时候老老实实要用文件读写</p><h2 id="serial串口线程"><a href="#serial串口线程" class="headerlink" title="serial串口线程"></a>serial串口线程</h2><blockquote><p>没有接触过Linux跑串口，尝尝佬的咸淡</p></blockquote><p>它将与 打印机通讯 与 其外设的通讯 分开为成为两个类</p><h3 id="串口通讯"><a href="#串口通讯" class="headerlink" title="串口通讯"></a>串口通讯</h3><ul><li>细数了其串口通讯外设：<ol><li>纵向横梁电机</li><li>横向横梁电机</li><li>限位保护器 * 4</li><li>（未知传感器）* 4</li></ol></li></ul><blockquote><p> 我一定是瞧见了新的一种创建进程的方法</p></blockquote><ul><li>新的技巧它使用了 <strong>符号重载</strong> 将&lt;&lt;重载出了push_back的用法 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++">QStringList m_serialPortName;<br>  foreach(<span class="hljs-type">const</span> QSerialPortInfo &amp;info,QSerialPortInfo::<span class="hljs-built_in">availablePorts</span>())&#123;<br>      m_serialPortName &lt;&lt; info.<span class="hljs-built_in">portName</span>();<br>  &#125;<br></code></pre></td></tr></table></figure>但是他没用到这个方法，他直接固定名为ttyS2的串口!精彩！</li></ul><p>它使用了一个新的类用于存放读到的数据，返回数据blablablabla这样的东西，这个类的信号函数和槽函数极多，主要用来收发。</p><blockquote><p>是的没错， 它使用了第二种创建进程的方法，以QObject的子类转移到 Thread 的进程中</p></blockquote><p>使用了心跳函数确保子进程能及时处死（莫名残忍）</p><h3 id="打印机通讯"><a href="#打印机通讯" class="headerlink" title="打印机通讯"></a>打印机通讯</h3><blockquote><p>下次一定</p></blockquote><h2 id="防不结款模块"><a href="#防不结款模块" class="headerlink" title="防不结款模块"></a>防不结款模块</h2><p>序列号全部定义在主函数中，常量定义，内存常量区中一定有他的配置结果， 如果修改就可以破解。（网络安全狂喜</p><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><blockquote><p>顺完这个我就打卡下班</p></blockquote><p>为了使标定好的值断电后仍然存在，于是使用数据库来存储标定好的数据</p><p>于是，当上电完成之后 就对 disMeterwhere 这个 哈希表 进行同步，使用的手法也是相当精简，一步到位</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-built_in">findCurrentData</span>(disMeterCalDBName,disMeterwhere[i],&amp;disMeterrow,disMeterCalFieldName_list.<span class="hljs-built_in">size</span>())<br></code></pre></td></tr></table></figure><p>至于声明这个函数的database项目，<strong>下次一定</strong></p><h2 id="初始数据iniAll"><a href="#初始数据iniAll" class="headerlink" title="初始数据iniAll"></a>初始数据iniAll</h2><p>将实验需要进行的模式取值进行一个定义，其中包含：</p><blockquote><p>请等一下，这些所有的配置都不计入数据库，BUT，他计入了ini文件，也可以掉电不丢失</p></blockquote><ul><li>PID数据</li><li>标定数据</li><li>脉冲系数</li><li>最大速度保护</li><li>电机类型</li><li>步进频率</li></ul><p>然后忙里偷闲将 ： 电机类型  步进频率 进行了一个串口通讯放出</p><ul><li>脉冲是否取反</li><li>电机是否取反</li><li>力值取反</li><li>点击开始是否全部清零</li><li>位移来源选择</li><li>位移计编号</li><li>变形来源选择</li><li>力值&#x2F;位移单位</li><li>传感器编号</li><li>传感器量程</li><li>力值过载保护百分比</li><li>力值过载保护</li><li>速度是否一致</li><li>按钮操作</li><li>外接按钮控制</li><li>标定力值</li><li>坐标轴初始值范围</li><li>横梁加力方向</li><li>力值小数点位数</li><li>位移小数点位数</li><li>加减速时间</li></ul><p>所以Pc程序的上任工程师将这些数据放入了：数据库中一并封存 </p><h2 id="语言选择"><a href="#语言选择" class="headerlink" title="语言选择"></a>语言选择</h2><blockquote><p>显示后直接隐藏，然后又delete了，估计还没加。</p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>QT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用 Qt-material-widget 美化项目</title>
     <link href="/2024/06/28/qt%E7%BE%8E%E5%8C%96/"/>
     <url>/2024/06/28/qt%E7%BE%8E%E5%8C%96/</url>
     
-    <content type="html"><![CDATA[<h1 id="Qt-material-widget"><a href="#Qt-material-widget" class="headerlink" title="Qt-material-widget"></a>Qt-material-widget</h1><br>今天收到了sir 的催促消息，我需要迅速做一版demo让sir看看怎么个事<p>于是我找了一份佬的控件库 <a href="https://github.com/laserpants/qt-material-widgets" title="Github连接">肘去看看</a></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>废话不多， 今天火急火燎的找了一个佬做的widget类，感觉蛮不错，很多东西都是用的Android默认的动画，本来这东西在Andrioid上只能说狗看了狗都嫌，但是放到我们桌面开发QT这里，仿佛就是 <strong>致命的解药</strong></p><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>相当多，举几个比较有存在感的例子</p><ul><li>Drawer</li><li>Toggle 开关</li><li>Tabs 任务栏</li><li>Slider 线性开关</li><li>Circular Progress 加载转转</li><li>Snackbar 弹出提醒框</li><li>Drawer 弹出菜单</li><li>dialog 弹出页面</li></ul><p><strong>啊，美妙！</strong></p><h2 id="移植"><a href="#移植" class="headerlink" title="移植"></a>移植</h2><p>我要把这东西改到我想让他出现的地方<br>大致看了看用法作用， 如果想让他实现的话，需要一段时间和一定的熟练度</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Qt-material-widget"><a href="#Qt-material-widget" class="headerlink" title="Qt-material-widget"></a>Qt-material-widget</h1><br>今天收到了sir 的催促消息，我需要迅速做一版demo让sir看看怎么个事<p>于是我找了一份佬的控件库 <a href="https://github.com/laserpants/qt-material-widgets" title="Github连接">肘去看看</a></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>废话不多， 今天火急火燎的找了一个佬做的widget类，感觉蛮不错，很多东西都是用的Android默认的动画，本来这东西在Andrioid上只能说狗看了狗都嫌，但是放到我们桌面开发QT这里，仿佛就是 <strong>致命的解药</strong></p><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>相当多，举几个比较有存在感的例子</p><ul><li>Toggle 开关</li><li>Tabs 任务栏</li><li>Slider 线性开关</li><li>Circular Progress 加载转转</li><li>Snackbar 弹出提醒框</li><li>Drawer 弹出菜单</li><li>dialog 弹出页面</li></ul><p><strong>啊，美妙！</strong></p><h2 id="移植"><a href="#移植" class="headerlink" title="移植"></a>移植</h2><p>我要把这东西改到我想让他出现的地方<br>大致看了看用法作用， 如果想让他实现的话，需要一段时间和一定的熟练度</p>]]></content>
     
     
     
