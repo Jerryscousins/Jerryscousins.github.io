@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>QT 多线程</title>
+    <link href="/2024/07/10/QT%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <url>/2024/07/10/QT%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="QT多线程"><a href="#QT多线程" class="headerlink" title="QT多线程"></a>QT多线程</h1><br><h2 id="方式Ⅰ"><a href="#方式Ⅰ" class="headerlink" title="方式Ⅰ"></a>方式Ⅰ</h2><p>继承 QThread 类 ，重构其run函数</p><blockquote><p>该run()独立于主线程存在，成为一个单独进程执行<br>技巧：结束后可以发射一个信号通报别的槽线程执行结束</p></blockquote><p>使用方法：</p><ul><li>.start() 方法运行</li><li>.quit() 线程终止</li><li>wait() 线程运行完毕后结束</li></ul><h2 id="方式Ⅱ"><a href="#方式Ⅱ" class="headerlink" title="方式Ⅱ"></a>方式Ⅱ</h2><p>继承QObject 类 ， 类中设置一位线程函数;<br>需要声明一个QTherad，将自定义类.movetoThread(QTherad)中</p><blockquote><p>这种方法的大致意思就是当执行该类时，所使用的线程被列为子线程，需要在外使用信号槽函数将其和外部连接。</p></blockquote><h1 id="上表总结"><a href="#上表总结" class="headerlink" title="上表总结"></a>上表总结</h1><p>大宗循环线程使用继承QThread类；<br>小量处理线程使用自定义QObject类；</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>QT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Qt-Arm项目梳理Ⅰ Main函数</title>
     <link href="/2024/07/01/Qt-arm%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86%E2%85%A0/"/>
     <url>/2024/07/01/Qt-arm%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86%E2%85%A0/</url>
