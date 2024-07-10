@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>QT 计时器功能是心啊</title>
+    <link href="/2024/07/10/QT%20Timer/"/>
+    <url>/2024/07/10/QT%20Timer/</url>
+    
+    <content type="html"><![CDATA[<h1 id="计时器实现方式"><a href="#计时器实现方式" class="headerlink" title="计时器实现方式"></a>计时器实现方式</h1><br><h2 id="QBasicTimer-类"><a href="#QBasicTimer-类" class="headerlink" title="QBasicTimer 类"></a>QBasicTimer 类</h2><blockquote><p>提供计时器事件，但是十分低级</p></blockquote><h2 id="QObject-类"><a href="#QObject-类" class="headerlink" title="QObject 类"></a>QObject 类</h2><blockquote><p>QObject内部事件，使用StartTimer开启计时器，定时器会在一定的间隔事件后触发timerEvern事件</p></blockquote><h2 id="QTimer-类"><a href="#QTimer-类" class="headerlink" title="QTimer 类"></a>QTimer 类</h2><blockquote><p>提供最丰富的重复、单次定时器功能，提供timerout()信号，可以连接对应槽，使用start() 开启定时器</p></blockquote><p>注意事项：</p><ul><li>分辨率取决于底层操作系统和硬件，据大多数平台支持精度为1ms</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>QT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>QT 多线程</title>
     <link href="/2024/07/10/QT%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <url>/2024/07/10/QT%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
