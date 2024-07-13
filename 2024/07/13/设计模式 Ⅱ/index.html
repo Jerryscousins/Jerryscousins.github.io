@@ -18,20 +18,20 @@
   
     <meta name="description" content="设计模式 Ⅱ 这一部分相比与上一章干货程度就比较少了  装饰器模式功能： 使用一个类对另外一个类进行接管，接管后可以自行扩展其他方法  做法： 使用一个类生成他的子类（装饰器），对子类构造时必须传参其父类 重写父类的方法，令其与子类的方法对齐 为子类新添加方法，用于起到装饰作用  代码：123456789101112131415161718192021class MAOMAO &#123;publ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式 Ⅱ">
+<meta property="og:title" content="设计模式 结构性模式">
 <meta property="og:url" content="http://jerryscousins.github.io/2024/07/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20%E2%85%A1/index.html">
 <meta property="og:site_name" content="人生不也是一局豪赌？">
 <meta property="og:description" content="设计模式 Ⅱ 这一部分相比与上一章干货程度就比较少了  装饰器模式功能： 使用一个类对另外一个类进行接管，接管后可以自行扩展其他方法  做法： 使用一个类生成他的子类（装饰器），对子类构造时必须传参其父类 重写父类的方法，令其与子类的方法对齐 为子类新添加方法，用于起到装饰作用  代码：123456789101112131415161718192021class MAOMAO &#123;publ">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-12T16:10:00.000Z">
-<meta property="article:modified_time" content="2024-07-12T17:13:09.253Z">
+<meta property="article:modified_time" content="2024-07-13T09:33:46.574Z">
 <meta property="article:author" content="BI_shen">
-<meta property="article:tag" content="QT">
+<meta property="article:tag" content="架构">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>设计模式 Ⅱ | 人生不也是一局豪赌？</title>
+  <title>设计模式 结构性模式 | 人生不也是一局豪赌？</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="设计模式 Ⅱ"></span>
+            <span id="subtitle" data-typed-text="设计模式 结构性模式"></span>
           
         </div>
 
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          570 字
+          407 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          5 分钟
+          4 分钟
         
       </span>
     
@@ -268,12 +268,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">设计模式 Ⅱ</h1>
+            <h1 id="seo-header">设计模式 结构性模式</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-13T01:13:09+08:00
+                    本文最后更新于 2024-07-13T17:33:46+08:00
                   
                   
 
@@ -306,31 +306,17 @@
 </ul>
 <h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a><strong>代码：</strong></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MAOMAO</span> &#123;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">(<span class="hljs-type">int</span> a , <span class="hljs-type">int</span> b)</span> </span>&#123;&#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MA</span>:<span class="hljs-keyword">public</span> MAOMAO &#123;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">MA</span>(MAOMAO maomao_n) &#123;<br>        <span class="hljs-keyword">this</span>-&gt;maomao = maomao_n;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span> </span>&#123;<br>        maomao.<span class="hljs-built_in">work</span>(a, <span class="hljs-number">0</span>);<br>    &#125;;<br><br><span class="hljs-keyword">private</span>:<br>    MAOMAO maomao;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h2 id="广播模式"><a href="#广播模式" class="headerlink" title="广播模式"></a>广播模式</h2><blockquote>
-<p>又名 <strong>观察者模式</strong> 或 <strong>发布-订阅模式</strong></p>
-</blockquote>
-<h3 id="功能：-2"><a href="#功能：-2" class="headerlink" title="功能："></a><strong>功能：</strong></h3><ul>
-<li>实现同类多个对象的集中化，资源，事件管理</li>
-</ul>
-<h3 id="做法：-2"><a href="#做法：-2" class="headerlink" title="做法："></a><strong>做法：</strong></h3><ul>
-<li>建立一个数据结构对所有的聆听类进行管辖</li>
-<li>当事件、资源被总类仲裁通过后， 对所有的聆听类进行通知</li>
-</ul>
-<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a><strong>代码：</strong></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PRO</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ProA</span> :<span class="hljs-keyword">public</span> PRO&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ProB</span> :<span class="hljs-keyword">public</span> PRO&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MAOMAO</span> &#123;<br>    vector&lt;PRO*&gt; all_pro;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add_box</span><span class="hljs-params">(PRO* a)</span> </span>&#123;<br>        all_pro.<span class="hljs-built_in">push_back</span>(a);<br>    &#125;;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">talk_all</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; all_pro.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            all_pro[i]-&gt;<span class="hljs-built_in">work</span>();<br>        &#125;<br>    &#125;;<br>&#125;;<br></code></pre></td></tr></table></figure>
-<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><strong>注意：</strong></h3><ul>
-<li>存储时使用指针存储，别让隐式类型转移害一辈子😓</li>
-</ul>
 <h2 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h2><blockquote>
 <p>又名 <strong>外观模式</strong> 或 <strong>办公模式</strong></p>
 </blockquote>
-<h3 id="功能：-3"><a href="#功能：-3" class="headerlink" title="功能："></a><strong>功能：</strong></h3><ul>
+<h3 id="功能：-2"><a href="#功能：-2" class="headerlink" title="功能："></a><strong>功能：</strong></h3><ul>
 <li>实现一键式部署</li>
 </ul>
-<h3 id="做法：-3"><a href="#做法：-3" class="headerlink" title="做法："></a><strong>做法：</strong></h3><ul>
+<h3 id="做法：-2"><a href="#做法：-2" class="headerlink" title="做法："></a><strong>做法：</strong></h3><ul>
 <li>建立新类提供高层次集中化接口，使子系统更易用</li>
 </ul>
-<h3 id="代码：-3"><a href="#代码：-3" class="headerlink" title="代码："></a><strong>代码：</strong></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs C++"><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">W_1</span> &#123;<br><span class="hljs-keyword">public</span> :<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">W_2</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">W_3</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MAOMAO</span> &#123;<br>    W_1 * w1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">W_1</span>();<br>    W_2 * w2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">W_2</span>();<br>    W_3 * w3 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">W_3</span>();<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>        w1-&gt;<span class="hljs-built_in">work</span>();<br>        w2-&gt;<span class="hljs-built_in">work</span>();<br>        w3-&gt;<span class="hljs-built_in">work</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-<h3 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a><strong>注意：</strong></h3><ul>
+<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a><strong>代码：</strong></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs C++"><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">W_1</span> &#123;<br><span class="hljs-keyword">public</span> :<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">W_2</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">W_3</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;&#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MAOMAO</span> &#123;<br>    W_1 * w1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">W_1</span>();<br>    W_2 * w2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">W_2</span>();<br>    W_3 * w3 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">W_3</span>();<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>        w1-&gt;<span class="hljs-built_in">work</span>();<br>        w2-&gt;<span class="hljs-built_in">work</span>();<br>        w3-&gt;<span class="hljs-built_in">work</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><strong>注意：</strong></h3><ul>
 <li>不符合开闭原则， 如果想修改功能， 需要更改脚本代码</li>
 </ul>
 
@@ -345,7 +331,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/QT/" class="print-no-link">#QT</a>
+        <a href="/tags/%E6%9E%B6%E6%9E%84/" class="print-no-link">#架构</a>
       
     </div>
   
@@ -357,7 +343,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>设计模式 Ⅱ</div>
+      <div>设计模式 结构性模式</div>
       <div>http://jerryscousins.github.io/2024/07/13/设计模式 Ⅱ/</div>
     </div>
     <div class="license-meta">
@@ -402,12 +388,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/07/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20%E2%85%A2/" title="设计模式 行为型模式">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">设计模式 行为型模式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%85%A0/" title="设计模式 I">
-                        <span class="hidden-mobile">设计模式 I</span>
+                      <a href="/2024/07/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%85%A0/" title="设计模式 创造性模式">
+                        <span class="hidden-mobile">设计模式 创造性模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
