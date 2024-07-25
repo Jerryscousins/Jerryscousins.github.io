@@ -16,22 +16,22 @@
   <meta name="author" content="BI_shen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码注释规范文件注释 文件注释即插入文件头部的注释    123456789&#x2F;**  @file  * 文件名：[文件名]  * 作者：〈版权〉  * 描述：〈描述〉  * 修改人：〈修改人〉  * 修改时间：YYYY-MM-DD  * 修改内容：〈修改内容〉*&#x2F;  类注释 类前声明    12345678&#x2F;*** @brief〈一句话功能简述〉* @author [作者]* @version [">
+    <meta name="description" content="Git分支规范master 分支 稳定版本分支   新的功能开发时，需要从本分支分配 feature-xxx 分支 进行开发  feature - xxx 分支 个人分支   个人功能开发结束后，进行自测 自测结束后， 合并到develop分支  develop 分支 开发主分支   多人开发合作版本的混合版本 阶段性开发结束后，进行联测  Release 分支 预发布、公测分支   联测结束后，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码注释规范">
-<meta property="og:url" content="http://jerryscousins.github.io/2024/07/17/Git%E5%88%86%E6%94%AF%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:title" content="Git分支规范">
+<meta property="og:url" content="http://jerryscousins.github.io/2024/07/25/Git%E5%88%86%E6%94%AF%E8%A7%84%E8%8C%83/index.html">
 <meta property="og:site_name" content="人生不也是一场豪赌？">
-<meta property="og:description" content="代码注释规范文件注释 文件注释即插入文件头部的注释    123456789&#x2F;**  @file  * 文件名：[文件名]  * 作者：〈版权〉  * 描述：〈描述〉  * 修改人：〈修改人〉  * 修改时间：YYYY-MM-DD  * 修改内容：〈修改内容〉*&#x2F;  类注释 类前声明    12345678&#x2F;*** @brief〈一句话功能简述〉* @author [作者]* @version [">
+<meta property="og:description" content="Git分支规范master 分支 稳定版本分支   新的功能开发时，需要从本分支分配 feature-xxx 分支 进行开发  feature - xxx 分支 个人分支   个人功能开发结束后，进行自测 自测结束后， 合并到develop分支  develop 分支 开发主分支   多人开发合作版本的混合版本 阶段性开发结束后，进行联测  Release 分支 预发布、公测分支   联测结束后，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-17T03:35:16.000Z">
-<meta property="article:modified_time" content="2024-07-17T03:42:44.282Z">
+<meta property="article:published_time" content="2024-07-25T07:33:24.000Z">
+<meta property="article:modified_time" content="2024-07-25T08:16:25.126Z">
 <meta property="article:author" content="BI_shen">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>代码注释规范 | 人生不也是一场豪赌？</title>
+  <title>Git分支规范 | 人生不也是一场豪赌？</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="代码注释规范"></span>
+            <span id="subtitle" data-typed-text="Git分支规范"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-17 11:35" pubdate>
-          2024年7月17日 中午
+        <time datetime="2024-07-25 15:33" pubdate>
+          2024年7月25日 下午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          257 字
+          258 字
         
       </span>
     
@@ -268,12 +268,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">代码注释规范</h1>
+            <h1 id="seo-header">Git分支规范</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-17T11:42:44+08:00
+                    本文最后更新于 2024-07-25T16:16:25+08:00
                   
                   
 
@@ -283,36 +283,52 @@
             
               <div class="markdown-body">
                 
-                <h1 id="代码注释规范"><a href="#代码注释规范" class="headerlink" title="代码注释规范"></a>代码注释规范</h1><h2 id="文件注释"><a href="#文件注释" class="headerlink" title="文件注释"></a>文件注释</h2><blockquote>
-<p>文件注释即插入文件头部的注释</p>
+                <h1 id="Git分支规范"><a href="#Git分支规范" class="headerlink" title="Git分支规范"></a>Git分支规范</h1><h2 id="master-分支"><a href="#master-分支" class="headerlink" title="master 分支"></a>master 分支</h2><blockquote>
+<p>稳定版本分支</p>
 </blockquote>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">/**</span><br><span class="hljs-comment">  @file</span><br><span class="hljs-comment">  * 文件名：[文件名]</span><br><span class="hljs-comment">  * 作者：〈版权〉</span><br><span class="hljs-comment">  * 描述：〈描述〉</span><br><span class="hljs-comment">  * 修改人：〈修改人〉</span><br><span class="hljs-comment">  * 修改时间：YYYY-MM-DD</span><br><span class="hljs-comment">  * 修改内容：〈修改内容〉</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="类注释"><a href="#类注释" class="headerlink" title="类注释"></a>类注释</h2><blockquote>
-<p>类前声明</p>
-</blockquote>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">/**</span><br><span class="hljs-comment">* @brief〈一句话功能简述〉</span><br><span class="hljs-comment">* @author [作者]</span><br><span class="hljs-comment">* @version [版本号, YYYY-MM-DD]</span><br><span class="hljs-comment">* @see [相关类/方法]</span><br><span class="hljs-comment">* @since [产品/模块版本]</span><br><span class="hljs-comment">* @deprecated</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
-<h3 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h3><ul>
-<li>@since 表示该类的最早历史版本号</li>
-<li>@deprecated 表示不建议使用该类</li>
+<ul>
+<li>新的功能开发时，需要从本分支分配 <strong>feature-xxx 分支</strong> 进行开发</li>
 </ul>
-<h2 id="变量注释"><a href="#变量注释" class="headerlink" title="变量注释"></a>变量注释</h2><blockquote>
-<p>类中属性 ，全局变量 ，宏定义 </p>
+<h2 id="feature-xxx-分支"><a href="#feature-xxx-分支" class="headerlink" title="feature - xxx 分支"></a>feature - xxx 分支</h2><blockquote>
+<p>个人分支</p>
 </blockquote>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//对齐被注释代码，在变量上方定义</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="成员变量注释"><a href="#成员变量注释" class="headerlink" title="成员变量注释"></a>成员变量注释</h2><blockquote>
-<p>成员变量</p>
-</blockquote>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//使用制表符，在变量本行右侧定义</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="函数注释"><a href="#函数注释" class="headerlink" title="函数注释"></a>函数注释</h2><blockquote>
-<p>类中方法 ，全局函数 ，内联函数 ，宏定义</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">/**</span><br><span class="hljs-comment">* @brief〈一句话功能简述〉</span><br><span class="hljs-comment">* @param [参数1] [参数1说明]</span><br><span class="hljs-comment">* @param [参数2] [参数2说明]</span><br><span class="hljs-comment">* @return [返回类型说明]</span><br><span class="hljs-comment">* @warning [违例说明]</span><br><span class="hljs-comment">* @see [类、类#方法、类#成员]</span><br><span class="hljs-comment">* @deprecated</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
-<h3 id="注解：-1"><a href="#注解：-1" class="headerlink" title="注解："></a>注解：</h3><ul>
-<li>@warning 禁止操作实例</li>
+<ul>
+<li>个人功能开发结束后，进行<strong>自测</strong></li>
+<li>自测结束后， 合并到<strong>develop分支</strong></li>
 </ul>
+<h2 id="develop-分支"><a href="#develop-分支" class="headerlink" title="develop 分支"></a>develop 分支</h2><blockquote>
+<p>开发主分支</p>
+</blockquote>
+<ul>
+<li>多人开发合作版本的混合版本</li>
+<li>阶段性开发结束后，进行<strong>联测</strong></li>
+</ul>
+<h2 id="Release-分支"><a href="#Release-分支" class="headerlink" title="Release 分支"></a>Release 分支</h2><blockquote>
+<p>预发布、公测分支</p>
+</blockquote>
+<ul>
+<li><strong>联测</strong>结束后， 从<strong>develop分支</strong>拉取，进行公测</li>
+<li><strong>公测</strong>结束后， 合并至<strong>master分支</strong></li>
+</ul>
+<h2 id="Bug-分支"><a href="#Bug-分支" class="headerlink" title="Bug 分支"></a>Bug 分支</h2><blockquote>
+<p>修复分支</p>
+</blockquote>
+<ul>
+<li>若在已经提交后的master分支上出现bug ，则分配到bug分支进行开发</li>
+<li>开发结束后， 按需要合并入master分支或者develop分支</li>
+</ul>
+<h1 id="Git分支规范-让我看看怎么个事"><a href="#Git分支规范-让我看看怎么个事" class="headerlink" title="Git分支规范 - 让我看看怎么个事"></a>Git分支规范 - 让我看看怎么个事</h1><blockquote>
+<p>如果一个项目只有一个人开发，或者零星几个人开发，我觉得我可以让它稍微简单点</p>
+</blockquote>
+<h2 id="master-分支-1"><a href="#master-分支-1" class="headerlink" title="master 分支"></a>master 分支</h2><blockquote>
+<p>稳定版本</p>
+</blockquote>
+<h2 id="feature-xxx-分支-1"><a href="#feature-xxx-分支-1" class="headerlink" title="feature - xxx 分支"></a>feature - xxx 分支</h2><blockquote>
+<p>特定功能开发版本</p>
+</blockquote>
+<h2 id="devlop-分支"><a href="#devlop-分支" class="headerlink" title="devlop 分支"></a>devlop 分支</h2><blockquote>
+<p>开发版本合并版本</p>
+</blockquote>
 
                 
               </div>
@@ -337,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>代码注释规范</div>
-      <div>http://jerryscousins.github.io/2024/07/17/Git分支规范/</div>
+      <div>Git分支规范</div>
+      <div>http://jerryscousins.github.io/2024/07/25/Git分支规范/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年7月17日</div>
+          <div>2024年7月25日</div>
         </div>
       
       
@@ -382,18 +398,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/17/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" title="代码注释规范">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代码注释规范</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/15/%E5%8A%9F%E8%83%BD%E5%A4%A7%E7%BA%B2%E6%91%98%E8%A6%81/" title="功能大纲摘要">
-                        <span class="hidden-mobile">功能大纲摘要</span>
+                      <a href="/2024/07/17/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" title="代码注释规范">
+                        <span class="hidden-mobile">代码注释规范</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
